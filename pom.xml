@@ -2,7 +2,7 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<groupId>com.mycompany</groupId>
+	<groupId>1323bca0-2fbb-47e3-baa4-cef7d8770374</groupId>
 	<artifactId>sample-test-project</artifactId>
 	<version>1.0.0-SNAPSHOT</version>
 	<packaging>mule-application</packaging>
@@ -29,6 +29,20 @@
 				<artifactId>mule-maven-plugin</artifactId>
 				<version>${mule.maven.plugin.version}</version>
 				<extensions>true</extensions>
+				<configuration>
+                  <cloudHubDeployment>
+                    <uri>https://anypoint.mulesoft.com</uri>
+                    <muleVersion>${mule.version}</muleVersion>
+                    <username>${anypoint.username}</username>
+                    <password>${anypoint.password}</password>
+                    <environment>${env}</environment>
+                    <applicationName>${appname}</applicationName>
+                    <businessGroup>${business}</businessGroup>
+                    <workerType>${vCore}</workerType>
+                    <workers>${workers}</workers>
+                    <objectStoreV2>true</objectStoreV2>
+                 </cloudHubDeployment>
+               </configuration>
 			</plugin>
 		</plugins>
 	</build>
